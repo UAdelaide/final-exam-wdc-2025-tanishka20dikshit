@@ -6,4 +6,4 @@ VALUES ('alice123','alice@example.com','hashed123','owner'),
        ('amanda123','amanda@example.com','hashed122','walker');
 
 INSERT INTO Dog (owner_id, name, size)
-VALUES ((SELECT user_id FROM Users))
+VALUES ((SELECT user_id FROM Users WHERE username=))
