@@ -71,8 +71,10 @@
               const data = await response.json();
               this.dogs = data;
             } else {
-              
+              console.warn("failed to load dogs");
             }
+          } catch {
+            console.error('Error fetching dogs:', err);
           }
         },
 
