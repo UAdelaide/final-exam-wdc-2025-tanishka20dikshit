@@ -44,13 +44,13 @@
           <td>{{dog.owner_username}}</td>
           <td><img :src="dog.photo" alt="Dog Photo" width="100"/></td>
         </tr> -->
-        <tr v-for="dog in dogs" :key="dog.dog_id">
+        <!-- <tr v-for="dog in dogs" :key="dog.dog_id">
           <td>ddf</td>
           <td>dfdf</td>
           <td>dfd</td>
           <td>fdf</td>
           <td><img :src="dog.photo" alt="Dog Photo" width="100"/></td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
 
@@ -71,18 +71,10 @@
       },
       methods: {
 
-        async fetchDogs(){
-          try {
-            const res = await fetch('/dogs');
-            if (res.ok) {
-              const data = await res.json();
-              this.dogs = data;
-            } else {
-              console.warn("failed to load dogs");
-            }
-          } catch (err){
-            console.error('Error fetching dogs:', err);
-          }
+        async fetchDogImages(){
+            const response = await fetch('https://dog.ceo/api/breeds/image/random');
+            const data = await response.json();
+            this.dogImage = data.message;
         },
 
         async login(){
