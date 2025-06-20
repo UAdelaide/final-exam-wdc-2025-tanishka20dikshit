@@ -45,9 +45,7 @@ router.get('/me', (req, res) => {
 //     const ownerID = req.session.user.user_id;
 //     const [rows] = await db.query('SELECT dog_id, name FROM Dogs WHERE owner_id = ?', [ownerID]);
 //     res.json(rows);
-//   } catch(err){
-//     res.status(500)
-//   }
+//   } catch(err){}
 // });
 
 // POST login (dummy version)
