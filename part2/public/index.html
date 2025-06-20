@@ -71,19 +71,7 @@
       },
       methods: {
 
-        async fetchDogs(){
-          try {
-            const res = await fetch('/dogs');
-            if (res.ok) {
-              const data = await res.json();
-              this.dogs = data;
-            } else {
-              console.warn("failed to load dogs");
-            }
-          } catch (err){
-            console.error('Error fetching dogs:', err);
-          }
-        },
+
 
         async login(){
           // event.preventDefault();
@@ -109,6 +97,24 @@
           }
         }
       },
+
+              async fetchDogs(){
+          try {
+            const res = await fetch('/dogs');
+            if (res.ok) {
+              const data = await res.json();
+              this.dogs = data;
+            } else {
+              console.warn("failed to load dogs");
+            }
+          } catch (err){
+            console.error('Error fetching dogs:', err);
+          }
+        },
+
+
+
+
       mounted() {
         this.fetchDogs();
       }
