@@ -38,7 +38,7 @@ router.get('/me', (req, res) => {
 
 router.get('/dogs', async (req, res)=> {
   if(!req.session.user || req.session.user.role !== 'owner') {
-    
+    return res.status(401).json({})
   }
 }
 )
