@@ -36,7 +36,7 @@ router.get('/me', (req, res) => {
 });
 
 
-router.get('/dogs',a)
+router.get('/dogs', async)
 
 
 // POST login (dummy version)
