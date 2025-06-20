@@ -5,4 +5,4 @@ VALUES ('alice123','alice@example.com','hashed123','owner'),
        ('jonh123','johndoe@example.com','hashed101','owner'),
        ('amanda123','amanda@example.com','hashed122','walker');
 
-INSERT INTO Dog ()
+INSERT INTO Dog (owner)
