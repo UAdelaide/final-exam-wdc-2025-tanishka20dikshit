@@ -51,6 +51,8 @@
             if (!res.ok) throw new Error("Failed to get user");
             const user = await res.json();
             return user.user_id;
+          } catch (err) {
+            error
           }
         }
 
