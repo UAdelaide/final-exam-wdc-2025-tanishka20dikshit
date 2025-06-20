@@ -75,3 +75,6 @@ VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'),'2025-06-10 08:00:00',30,'P
        ((SELECT dog_id FROM Dogs WHERE name = 'Bruno'),'2025-11-10 10:30:00',50,'Grant Ave','accepted'),
        ((SELECT dog_id FROM Dogs WHERE name = 'coco'),'2025-06-10 09:35:00',45,'glenelg','open'),
        ((SELECT dog_id FROM Dogs WHERE name = 'Maxine'),'2025-09-10 09:30:00',60,'Walkerville','open');
+
+
+INSERT INTO WalkRatings (re)
