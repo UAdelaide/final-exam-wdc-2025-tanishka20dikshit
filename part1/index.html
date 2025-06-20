@@ -24,8 +24,10 @@
             dogImage: ''
         };
       },
-      
-      methods {
+      mounted(){
+        this.fetchDogImages();
+      },
+      methods: {
         async fetchDogImages(){
             const response = await fetch('https://dog.ceo/dog-api/documentation/random');
             const data = await response.json();
