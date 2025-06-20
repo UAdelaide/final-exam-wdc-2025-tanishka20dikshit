@@ -101,6 +101,9 @@
             alert('Login Failed!');
           }
         }
+      },
+      mounted() {
+        this.fetchDogs();
       }
     }).mount('#app');
   </script>
