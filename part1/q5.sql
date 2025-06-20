@@ -17,4 +17,4 @@ VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'),'2025-06-10 08:00:00',30,'P
        ((SELECT dog_id FROM Dogs WHERE name = 'Bella'),'06-10 09:30:00',45,'Beachside Ave','accepted'),
        ((SELECT dog_id FROM Dogs WHERE name = 'Bruno'),'11-10 10:30:00',50,'Grant Ave','accepted'),
        ((SELECT dog_id FROM Dogs WHERE name = 'coco'),'06-10 09:35:00',45,'glenelg','open'),
-       ((SELECT dog_id FROM Dogs WHERE name = 'Maxine'),'09-10 09:30:00',60,'Walker','accepted'),
+       ((SELECT dog_id FROM Dogs WHERE name = 'Maxine'),'09-10 09:30:00',60,'Walkerville','open'),
