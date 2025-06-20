@@ -10,7 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session({
-    
+    secret: 'a1897259',
+    resave: false,
 }))
 app.use(express.static(path.join(__dirname, '/public')));
 
