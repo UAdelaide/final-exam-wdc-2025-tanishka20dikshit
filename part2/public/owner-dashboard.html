@@ -104,6 +104,8 @@
             if (!res.ok) throw new Error('Users not logged in');
             const user = await res.json();
             return user.user_id;
+          } catch(err){
+            console.error('Failed to get the current user ID')
           }
         }
 
