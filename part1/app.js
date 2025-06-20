@@ -52,7 +52,7 @@ app.get('/api/dogs', async (req, res) => {
 
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
-    const [requests] = await db.execute(`SELECT 
+    const [requests] = await db.execute(`SELECT request_id, 
       * FROM WalkRequests WHERE status = 'open'`);
     res.json(requests);
   } catch (err) {
