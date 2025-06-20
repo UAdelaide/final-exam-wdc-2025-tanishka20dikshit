@@ -72,7 +72,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.get('/api/dogs', async (req, res) => {
+router.get('/api/users/dogs', async (req, res) => {
   try {
     const [dogs] = await db.execute(`SELECT Dogs.dog_id, Dogs.name AS dog_name, Dogs.size, Dogs.photo, Users.username AS owner_username
       FROM Dogs
