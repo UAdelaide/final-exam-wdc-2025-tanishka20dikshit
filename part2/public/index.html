@@ -11,19 +11,21 @@
 
   <div id="app" class="container py-5">
     <h1 class="mb-4 text-primary">{{ message }}</h1>
+
+    <form class="login-form">
+      <label for="username"> Username</label> <br>
+      <input type="text" id="username" v-model="username"> <br>
+      <label for="password"> Password</label> <br>
+      <input type="password" id="password" v-model="password"> <br> <br>
+      <button type="button" class="log-in-button" @click="login">Log In</button>
+    </form>
+
     <!-- <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a> -->
   </div>
 
-  <form class="login-form">
-    <label for="username"> Username</label> <br>
-    <input type="text" id="username" v-model="username"> <br>
-    <label for="password"> Password</label> <br>
-    <input type="password" id="password" v-model="password"> <br> <br>
-    <button type="button" class="log-in-button" @click="login">Log In</button>
-  </form>
 
 
   <script>
