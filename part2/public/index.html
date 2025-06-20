@@ -49,7 +49,7 @@
             body: JSON.stringify({ username, password})
           });
 
-          cons
+          const result = await response.json();
         }
       }
     }).mount('#app');
