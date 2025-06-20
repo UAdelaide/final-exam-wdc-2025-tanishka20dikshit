@@ -39,7 +39,7 @@ let db;
 
 app.get('/api/dogs', async (req, res) => {
   try {
-    const [dogs] = await db.execute('SELECT * FROM Dogs');
+    const [dogs] = await db.execute('SELECT dog.name AS dog_name');
     res.json(dogs);
   } catch (err) {
     console.error(err);
