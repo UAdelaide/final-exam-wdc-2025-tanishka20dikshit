@@ -50,7 +50,7 @@ app.get('/api/dogs', async (req, res) => {
   }
 });
 
-app.get('/api/dogs', async (req, res) => {
+app.get('/api/walkrequests/open', async (req, res) => {
   try {
     const [dogs] = await db.execute(`SELECT dog.name AS dog_name, dog.size AS size, user.username AS owner_username
       FROM Dogs dog
@@ -59,7 +59,7 @@ app.get('/api/dogs', async (req, res) => {
     res.json(dogs);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Failed to fetch dogs' });
+    res.status(500).json({ error: 'Failed to fetch walk requests' });
   }
 });
 
