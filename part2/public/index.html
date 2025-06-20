@@ -19,10 +19,10 @@
 
   <form class="login-form">
     <label for="username"> Username</label> <br>
-    <input type="text" id="username" name="username"> <br>
+    <input type="text" id="username" v-model="username"> <br>
     <label for="password"> Password</label> <br>
-    <input type="password" id="password" name="password"> <br> <br>
-    <button type="button" class="log-in-button" onclick="login()">Log In</button>
+    <input type="password" id="password" v-model="password"> <br> <br>
+    <button type="button" class="log-in-button" onclick="login">Log In</button>
   </form>
 
 
