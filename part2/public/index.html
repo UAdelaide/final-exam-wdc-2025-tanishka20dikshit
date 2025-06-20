@@ -67,7 +67,12 @@
         async fetchDogs(){
           try {
             const res = await fetch('/dogs');
-            if (res.ok)
+            if (res.ok) {
+              const data = await response.json();
+              this.dogs = data;
+            } else {
+              
+            }
           }
         },
 
