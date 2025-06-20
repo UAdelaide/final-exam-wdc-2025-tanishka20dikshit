@@ -15,6 +15,7 @@ app.use(session({
     saveUninitialized: true,
     cookie: {secure: false}
 }));
+
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Routes
