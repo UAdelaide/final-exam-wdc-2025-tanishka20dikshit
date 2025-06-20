@@ -92,6 +92,11 @@
           }
         }
 
+
+        async logout(){
+
+        }
+
         async function submitWalkRequest() {
           try {
             const res = await fetch('/api/walks', {
@@ -116,11 +121,8 @@
             error.value = err.message;
             message.value = '';
           }
-        },
-
-        async logout(){
-
         }
+
 
         onMounted(() => {
           loadWalks();
