@@ -80,7 +80,7 @@ app.get('/api/walkers/summary ', async (req, res) => {
     res.json(summary);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: 'Failed to fetch walk requests' });
+    res.status(500).json({ error: 'Failed to fetch walk summary' });
   }
 });
 
