@@ -36,9 +36,6 @@ let db;
   }
 })();
 
-app.get('/', (req, res) => {
-  res.send('Hello! Server is working.');
-});
 
 app.get('/api/dogs', async (req, res) => {
   try {
