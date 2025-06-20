@@ -28,8 +28,6 @@ app.use('/api/users', userRoutes);
 // Export the app instead of listening here
 // module.exports = app;
 
-app.get
-
 const port = 3000;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
