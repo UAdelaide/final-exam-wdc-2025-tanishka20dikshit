@@ -36,19 +36,19 @@ router.get('/me', (req, res) => {
 });
 
 
-router.get('/dogs', async (req, res) => {
-  if(!req.session.user || req.session.user.role !== 'owner') {
-    return res.status(401);
-  }
+// router.get('/dogs', async (req, res) => {
+//   if(!req.session.user || req.session.user.role !== 'owner') {
+//     return res.status(401);
+//   }
 
-  try {
-    const ownerID = req.session.user.user_id;
-    const [rows] = await db.query('SELECT dog_id, name FROM Dogs WHERE owner_id = ?', [ownerID]);
-    res.json(rows);
-  } catch(err){
-    res.status(500).json();
-  }
-});
+//   try {
+//     const ownerID = req.session.user.user_id;
+//     const [rows] = await db.query('SELECT dog_id, name FROM Dogs WHERE owner_id = ?', [ownerID]);
+//     res.json(rows);
+//   } catch(err){
+//     res.status(500)
+//   }
+// });
 
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
