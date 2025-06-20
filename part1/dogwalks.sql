@@ -77,4 +77,4 @@ VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'),'2025-06-10 08:00:00',30,'P
        ((SELECT dog_id FROM Dogs WHERE name = 'Maxine'),'2025-09-10 09:30:00',60,'Walkerville','open');
 
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
-VALUES ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT)))
+VALUES ((SELECT request_id FROM WalkRequests WHERE dog_id = (SELECT dog_id FROM Dogs )))
