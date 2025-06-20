@@ -35,7 +35,7 @@
         return {
           message: 'Welcome to the Dog Walking Service!',
           username: '',
-          hashedPassword: ''
+          password: ''
         };
       },
       methods: {
@@ -45,7 +45,7 @@
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ username: this.username, password: this.hashedPassword})
+            body: JSON.stringify({ username: this.username, password: this.password})
           });
 
           const result = await response.json();
