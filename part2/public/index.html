@@ -73,7 +73,7 @@
 
         async fetchDogs(){
           try {
-            const res = await fetch('/dogs');
+            const res = await fetch('/api/dogs');
             if (res.ok) {
               const data = await res.json();
               this.dogs = data;
