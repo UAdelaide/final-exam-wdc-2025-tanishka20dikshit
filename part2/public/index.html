@@ -17,7 +17,7 @@
       <input type="text" id="username" v-model="username"> <br>
       <label for="password"> Password</label> <br>
       <input type="password" id="password" v-model="password"> <br> <br>
-      <button type="button" class="log-in-button" @click="login">Log In</button>
+      <button type="submit" class="log-in-button" @click="login">Log In</button>
     </form>
 
     <!-- <p class="lead">Connect with trusted walkers for your beloved dog!</p>
@@ -53,9 +53,9 @@
           if (response.ok){
             const user = result.user;
             if (user.role === 'owner'){
-              window.location.href = "owner-dashboard.html";
+              window.location.href = "/owner-dashboard.html";
             } else if (user.role === 'walker'){
-              window.location.href = "walker-dashboard.html";
+              window.location.href = "/walker-dashboard.html";
             }
           }
           else {
