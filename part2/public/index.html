@@ -37,20 +37,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="dog in dogs" :key="dog.dog_id">
+        <!-- <tr v-for="dog in dogs" :key="dog.dog_id">
           <td>{{dog.dog_id}}</td>
           <td>{{dog.dog_name}}</td>
           <td>{{dog.size}}</td>
           <td>{{dog.owner_username}}</td>
           <td><img :src="dog.photo" alt="Dog Photo" width="100"/></td>
-        </tr>
-        <!-- <tr v-for="dog in dogs" :key="dog.dog_id">
+        </tr> -->
+        <tr v-for="dog in dogs" :key="dog.dog_id">
           <td>ddf</td>
           <td>dfdf</td>
           <td>dfd</td>
           <td>fdf</td>
           <td><img :src="dog.photo" alt="Dog Photo" width="100"/></td>
-        </tr> -->
+        </tr>
       </tbody>
     </table>
 
