@@ -26,12 +26,12 @@ app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
 // Export the app instead of listening here
-module.exports = app;
+// module.exports = app;
 
 
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
-// const port = 3000;
-// app.listen(port, () => {
-//   console.log(`Server running at http://localhost:${port}`);
-// });
+const port = 3000;
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
