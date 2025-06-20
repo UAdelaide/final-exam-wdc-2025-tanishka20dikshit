@@ -72,8 +72,8 @@ VALUES ((SELECT user_id FROM Users WHERE username = 'alice123'), 'Max', 'medium'
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status)
 VALUES ((SELECT dog_id FROM Dogs WHERE name = 'Max'),'2025-06-10 08:00:00',30,'Parklands','open'),
        ((SELECT dog_id FROM Dogs WHERE name = 'Bella'),'2025-06-10 09:30:00',45,'Beachside Ave','accepted'),
-       ((SELECT dog_id FROM Dogs WHERE name = 'Bruno'),'2025-11-10 10:30:00',50,'Grant Ave',''),
-       ((SELECT dog_id FROM Dogs WHERE name = 'coco'),'2025-06-10 09:35:00',45,'glenelg','open'),
+       ((SELECT dog_id FROM Dogs WHERE name = 'Bruno'),'2025-11-10 10:30:00',50,'Grant Ave','completed'),
+       ((SELECT dog_id FROM Dogs WHERE name = 'coco'),'2025-06-10 09:35:00',45,'glenelg','completed'),
        ((SELECT dog_id FROM Dogs WHERE name = 'Maxine'),'2025-09-10 09:30:00',60,'Walkerville','open');
 
 INSERT INTO WalkRatings (request_id, walker_id, owner_id, rating, comments)
