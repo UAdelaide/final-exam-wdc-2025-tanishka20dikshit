@@ -74,8 +74,8 @@ router.post('/login', async (req, res) => {
 
 app.get('/api/dogs', async (req, res) => {
   try {
-    const [dogs] = await db.execute(`SELECT dog.name AS dog_name, dog.size AS size, user.username AS owner_username
-      FROM Dogs dog
+    const [dogs] = await db.execute(`SELECT * FROM
+      FROM Dogs 
       JOIN Users user ON dog.owner_id = user.user_id
       `);
     res.json(dogs);
