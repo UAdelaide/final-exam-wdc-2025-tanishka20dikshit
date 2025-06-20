@@ -45,7 +45,7 @@ router.get('/dogs', async (req, res) => {
     const [rows] = await db.query('SELECT dog_id, name FROM Dogs WHERE owner_id = ?', [ownerID]);
     res.json(rows);
   } catch(err){
-    res.json();
+    res.status(500).json();
   }
 });
 
