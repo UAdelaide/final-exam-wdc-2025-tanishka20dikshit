@@ -28,8 +28,7 @@ app.use('/api/users', userRoutes);
 // Export the app instead of listening here
 // module.exports = app;
 
-
-app.use(express.static(path.join(__dirname, 'public')));
+app.get
 
 const port = 3000;
 app.listen(port, () => {
