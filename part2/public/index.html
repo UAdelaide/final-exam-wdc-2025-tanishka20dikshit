@@ -94,6 +94,7 @@
                 const photoData = await photo.json();
                 dog.photo = photoData.message;
               }
+              this.dogs = dogs;
 
             } else {
               console.warn("failed to load dogs");
