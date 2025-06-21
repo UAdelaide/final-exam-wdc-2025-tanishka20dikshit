@@ -30,6 +30,11 @@ let db;
       password: '',
       database: 'DogWalkService'
     });
+
+    const port = 8080;
+    app.listen(port, () => {
+      console.log(`Server running at http://localhost:${port}`);
+    });
   } catch (err) {
     console.error('Error setting up database:', err);
   }
@@ -72,7 +77,4 @@ app.use(express.static(path.join(__dirname, '/public')));
 // Export the app instead of listening here
 // module.exports = app;
 
-const port = 8080;
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
-});
+
