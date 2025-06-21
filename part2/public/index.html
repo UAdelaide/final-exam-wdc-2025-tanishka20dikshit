@@ -31,7 +31,7 @@
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a> -->
 
     <h1> All registered dogs</h1>
-    <table class="table table-striped table-bordered table-hover">
+    <table v-if="dogs.length" class="table table-striped table-bordered table-hover">
       <thead class="table-striped">
         <tr>
           <th>Dog ID</th>
