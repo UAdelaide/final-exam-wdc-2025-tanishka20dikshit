@@ -36,45 +36,47 @@ let db;
       console.log(`Server running at http://localhost:${port}`);
     });
 
+
+    app.use(session({
+        secret: 'a1897259',
+        resave: false,
+        saveUninitialized: true,
+        cookie: {secure: false}
+    }));
+
+
+
+    // Routes
+    const walkRoutes = require('./routes/walkRoutes');
+    const userRoutes = require('./routes/userRoutes');
+
+    app.use('/api/walks', walkRoutes);
+    app.use('/api/users', userRoutes);
+
+    app.get('/api/dogs', async (req, res) => {
+      try {
+        const [dogs] = await db.execute(`SELECT
+          dog.dog_id,
+          dog.name AS dog_name,
+          dog.size,
+          user.user_id AS owner_id
+          FROM Dogs dog
+          JOIN Users user ON dog.owner_id = user.user_id
+          `);
+        res.json(dogs);
+      } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Failed to fetch dogs' });
+      }
+    });
+
+    app.use(express.static(path.join(__dirname, '/public')));
+
   } catch (err) {
     console.error('Error setting up database:', err);
   }
 })();
 
-app.use(session({
-    secret: 'a1897259',
-    resave: false,
-    saveUninitialized: true,
-    cookie: {secure: false}
-}));
-
-
-
-// Routes
-const walkRoutes = require('./routes/walkRoutes');
-const userRoutes = require('./routes/userRoutes');
-
-app.use('/api/walks', walkRoutes);
-app.use('/api/users', userRoutes);
-
-app.get('/api/dogs', async (req, res) => {
-  try {
-    const [dogs] = await db.execute(`SELECT
-      dog.dog_id,
-      dog.name AS dog_name,
-      dog.size,
-      user.user_id AS owner_id
-      FROM Dogs dog
-      JOIN Users user ON dog.owner_id = user.user_id
-      `);
-    res.json(dogs);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Failed to fetch dogs' });
-  }
-});
-
-app.use(express.static(path.join(__dirname, '/public')));
 
 // Export the app instead of listening here
 // module.exports = app;
