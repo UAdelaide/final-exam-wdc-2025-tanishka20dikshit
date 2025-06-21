@@ -42,7 +42,7 @@ app.use(session({
     cookie: {secure: false}
 }));
 
-app.use(express.static(path.join(__dirname, '/public')));
+
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
@@ -67,6 +67,7 @@ app.get('/dogs', async (req, res) => {
   }
 });
 
+app.use(express.static(path.join(__dirname, '/public')));
 
 // Export the app instead of listening here
 module.exports = app;
