@@ -89,7 +89,6 @@
             const res = await fetch('http://localhost:3000/api/dogs');
             if (res.ok) {
               const data = await res.json();
-              this.dogs = data;
             } else {
               console.warn("failed to load dogs");
             }
