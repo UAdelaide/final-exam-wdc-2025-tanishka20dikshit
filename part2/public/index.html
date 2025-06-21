@@ -99,7 +99,11 @@
             const data = await res.json();
 
             await Promise.all(
-              data.map(async (dog))
+              data.map(async (dog) => {
+                try {
+                  const photo = await fetch('')
+                }
+              })
             )
 
           } catch (err){
