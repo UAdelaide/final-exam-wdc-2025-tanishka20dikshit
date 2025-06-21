@@ -30,6 +30,7 @@ app.get('/api/dogs', async (req, res) => {
     const [dogs] = await db.execute(`SELECT dog.dog_id,
       dog.name AS dog_name,
       dog.size,
+      
       user.username AS owner_username
       FROM Dogs dog
       JOIN Users user ON dog.owner_id = user.user_id
