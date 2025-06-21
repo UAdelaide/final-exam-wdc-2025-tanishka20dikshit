@@ -89,23 +89,7 @@
         },
 
         async fetchDogs(){
-          try {
-            const res = await fetch('/api/dogs');
-            if (res.ok) {
-              const data = await res.json();
-              for (let dog of data){
-                const photo = await fetch('https://dog.ceo/api/breeds/image/random');
-                const photoData = await photo.json();
-                dog.photo = photoData.message;
-              }
-              this.dogs = data;
-
-            } else {
-              console.warn("failed to load dogs");
-            }
-          } catch (err){
-            console.error('Error fetching dogs:', err);
-          }
+          .then(res => res.json())
         },
 
       },
