@@ -52,10 +52,10 @@
             const res = await fetch('/api/users/me');
             if (!res.ok) throw new Error("Failed to get current user");
             const user = await res.json();
-            return user.user_id;
+            walkerID.value = user.user_id;  // Assign to walkerID
           } catch (err) {
             error.value = "Could not fetch user ID";
-            return null;
+            walkerID.value = null;
           }
         }
 
