@@ -12,6 +12,29 @@ app.use(express.urlencoded({ extended: true }));
 
 let db;
 
+(async () => {
+  try {
+    // Create DogWalkService database if not exists
+    const connection = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '' // your MySQL password here
+    });
+    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalkService');
+    await connection.end();
+
+    // Connect to DogWalkService database
+    db = await mysql.createConnection({
+      host: 'localhost',
+      user: 'root',
+      password: '',
+      database: 'DogWalkService'
+    });
+  } catch (err) {
+    console.error('Error setting up database:', err);
+  }
+})();
+
 app.use(session({
     secret: 'a1897259',
     resave: false,
