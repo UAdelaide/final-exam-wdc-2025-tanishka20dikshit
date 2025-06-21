@@ -89,12 +89,12 @@
             const res = await fetch('http://localhost:3000/api/dogs');
             if (res.ok) {
               const data = await res.json();
-              for (let dog of dogs){
+              for (let dog of data){
                 const photo = await fetch('https://dog.ceo/api/breeds/image/random');
                 const photoData = await photo.json();
                 dog.photo = photoData.message;
               }
-              this.dogs = dogs;
+              this.dogs = data;
 
             } else {
               console.warn("failed to load dogs");
