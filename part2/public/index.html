@@ -45,10 +45,10 @@
           <td><img :src="dog.photo" alt="Dog Photo" width="100"/></td>
         </tr> -->
         <tr v-for="dog in dogs" :key="dog.dog_id">
-          <td>ddf</td>
-          <td>dfdf</td>
-          <td>dfd</td>
-          <td>fdf</td>
+          <td>{{ dog.dog_name }}</td>
+          <td>{{ dog.size }}</td>
+          <td>{{ dog.dog_name }}</td>
+          <td>{{ dog.dog_name }}</td>
           <td><img :src="dog.photo" alt="Dog Photo" width="100"/></td>
         </tr>
       </tbody>
