@@ -35,6 +35,7 @@ let db;
     app.listen(port, () => {
       console.log(`Server running at http://localhost:${port}`);
     });
+
   } catch (err) {
     console.error('Error setting up database:', err);
   }
