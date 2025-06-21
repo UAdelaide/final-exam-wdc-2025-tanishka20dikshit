@@ -15,11 +15,13 @@
     <form class="login-form" @submit.prevent="login">
       <div class="mb-3">
         <label for="username"> Username</label> <br>
-      <input type="text" id="username" v-model="username"> <br>
+        <input type="text" id="username" v-model="username"> <br>
+      </div>
+      <div class="mb-3">
+        <label for="password"> Password</label> <br>
+      <input type="password" id="password" v-model="password"> <br> <br>
       </div>
 
-      <label for="password"> Password</label> <br>
-      <input type="password" id="password" v-model="password"> <br> <br>
       <button type="submit" class="btn btn-primary">Log In</button>
     </form>
 
