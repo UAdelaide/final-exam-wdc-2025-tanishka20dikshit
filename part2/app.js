@@ -2,12 +2,15 @@ const express = require('express');
 const path = require('path');
 const session = require('express-session');
 require('dotenv').config();
+var mysql = require('mysql2/promise');
 
 const app = express();
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+let db;
 
 app.use(session({
     secret: 'a1897259',
