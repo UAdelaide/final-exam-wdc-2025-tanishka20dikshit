@@ -53,10 +53,11 @@
             const user = await res.json();
             return user.user_id;
           } catch (err) {
-            error.value = "Could not fetch user id";
+            error.value = "Could not fetch user ID";
             return null;
           }
         }
+
 
 
         async function loadWalkRequests() {
