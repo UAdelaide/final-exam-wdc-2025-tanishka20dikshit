@@ -28,21 +28,21 @@ const userRoutes = require('./routes/userRoutes');
 app.use('/api/walks', walkRoutes);
 app.use('/api/users', userRoutes);
 
-app.get('/api/dogs', async (req, res) => {
-  try {
-    const [dogs] = await db.execute(`SELECT dog.dog_id,
-      dog.name AS dog_name,
-      dog.size,
-      user.username AS owner_username
-      FROM Dogs dog
-      JOIN Users user ON dog.owner_id = user.user_id
-      `);
-    res.json(dogs);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Failed to fetch dogs' });
-  }
-});
+// app.get('/api/dogs', async (req, res) => {
+//   try {
+//     const [dogs] = await db.execute(`SELECT dog.dog_id,
+//       dog.name AS dog_name,
+//       dog.size,
+//       user.username AS owner_username
+//       FROM Dogs dog
+//       JOIN Users user ON dog.owner_id = user.user_id
+//       `);
+//     res.json(dogs);
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ error: 'Failed to fetch dogs' });
+//   }
+// });
 
 
 // Export the app instead of listening here
