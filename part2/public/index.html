@@ -89,6 +89,10 @@
             const res = await fetch('http://localhost:3000/api/dogs');
             if (res.ok) {
               const data = await res.json();
+              for (let dog of dogs){
+                const photo
+              }
+
             } else {
               console.warn("failed to load dogs");
             }
