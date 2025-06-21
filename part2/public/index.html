@@ -41,7 +41,7 @@
           <th>Photo</th>
         </tr>
       </thead>
-      <!-- <tbody>
+      <tbody>
         <tr v-for="dog in dogs" :key="dog.dog_id">
           <td>{{dog.dog_id}}</td>
           <td>{{dog.dog_name}}</td>
@@ -49,7 +49,7 @@
           <td>{{dog.owner_username}}</td>
           <td><img :src="dog.photo" alt="Dog Photo" width="100"/></td>
         </tr>
-      </tbody> -->
+      </tbody>
     </table>
   </div>
 
@@ -88,33 +88,33 @@
           }
         },
 
-        fetch('/api/dogs')
-          .then(res => res.json())
-          .then(async dogs => {
-            const table = document.getElementById('dog-picture-table');
-            if (!table) return;
-            table.innerHTML = '';
-            // Map dog array to promises of image fetch + row append
-            await Promise.all(dogs.map(async dog => {
-              try {
-                const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
-                const imgData = await imgRes.json();
+        async fetchDogs(){
+          try {
+            const res = await fetch('/api/dogs');
+            if (!res.ok) {
+              console.warn("failed to load dogs");
+              return;
+            }
 
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                  <td>${dog.dog_name}</td>
-                  <td>${dog.size}</td>
-                  <td>${dog.owner_username}</td>
-                  <td><img src="${imgData.message}" alt="Dog photo" width="100" /></td>
-                `;
-                table.appendChild(row);
-              } catch (e) {
-                console.error('Failed to load image for dog:', dog.dog_name, e);
-              }
-            }));
-          })
-          .catch(err => console.error('Failed to load dogs:', err));
+            const data = await res.json();
 
+            await Promise.all(
+              data.map(async (dog) => {
+                try {
+                  const photo = await fetch('https://dog.ceo/api/breeds/image/random');
+                  const photoData = await photo.json();
+                  dog.photo = photoData.message;
+                } catch (e) {
+                  dog.photo = '';
+                }
+              })
+            );
+
+            this.dogs = data;
+          } catch (err){
+            console.error('Error fetching dogs:', err);
+          }
+        },
 
       },
       mounted() {
