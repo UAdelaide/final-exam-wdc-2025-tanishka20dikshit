@@ -95,7 +95,8 @@
               console.warn("failed to load dogs");
               return;
             }
-            
+
+            const data = await res.json();
           } catch (err){
             console.error('Error fetching dogs:', err);
           }
