@@ -90,7 +90,7 @@
 
         async fetchDogs(){
           try {
-            const res = await fetch('http://localhost:3000/api/dogs');
+            const res = await fetch('/api/dogs');
             if (res.ok) {
               const data = await res.json();
               for (let dog of data){
