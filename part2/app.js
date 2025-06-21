@@ -48,7 +48,7 @@ app.get('/dogs', async (req, res) => {
 // Export the app instead of listening here
 module.exports = app;
 
-const port = 3000;
+const port = 8080;
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
