@@ -70,7 +70,7 @@ app.get('/dogs', async (req, res) => {
 app.use(express.static(path.join(__dirname, '/public')));
 
 // Export the app instead of listening here
-module.exports = app;
+// module.exports = app;
 
 const port = 8080;
 app.listen(port, () => {
