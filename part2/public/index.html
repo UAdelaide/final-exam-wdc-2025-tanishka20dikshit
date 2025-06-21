@@ -99,7 +99,7 @@
             const data = await res.json();
 
             await Promise.all(
-              
+              data.map(async (dog))
             )
 
           } catch (err){
