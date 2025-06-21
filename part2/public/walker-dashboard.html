@@ -77,11 +77,11 @@
         async function applyToWalk(requestId) {
           try {
             if (!walkerId.value) throw new Error("Walker ID not available");
-            
+
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ walker_id: user })
+              body: JSON.stringify({ walker_id: walkerID.value })
             });
             const result = await res.json();
 
