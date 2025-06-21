@@ -59,7 +59,8 @@ app.use('/api/users', userRoutes);
 
 app.get('/api/dogs', async (req, res) => {
   try {
-    const [dogs] = await db.execute(`SELECT dog.dog_id,
+    const [dogs] = await db.execute(`SELECT
+      dog.dog_id,
       dog.name AS dog_name,
       dog.size,
       user.user_id AS owner_id
